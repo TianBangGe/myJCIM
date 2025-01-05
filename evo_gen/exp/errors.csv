@@ -1,0 +1,25 @@
+step,error
+0,No more individual to be mutated
+1,stack expects a non-empty TensorListN RmA-0 (Evaluation error)
+1,No more individual to be mutated
+2,No more individual to be mutated
+3,stack expects a non-empty TensorListC RmA-0 (Evaluation error)
+3,No more individual to be mutated
+9,stack expects a non-empty TensorListBr RmA-0 (Evaluation error)
+9,stack expects a non-empty TensorListS RmA-0 (Evaluation error)
+10,stack expects a non-empty TensorListS RmA-0 (Evaluation error)
+11,stack expects a non-empty TensorListS RmA-0 (Evaluation error)
+11,stack expects a non-empty TensorListNCl RmA-0_RmA-0 (Evaluation error)
+12,stack expects a non-empty TensorListBr RmA-0 (Evaluation error)
+18,stack expects a non-empty TensorListCl RmA-0 (Evaluation error)
+34,stack expects a non-empty TensorListClBr RmA-0_RmA-0 (Evaluation error)
+45,stack expects a non-empty TensorListF RmA-0 (Evaluation error)
+46,stack expects a non-empty TensorListF RmA-0 (Evaluation error)
+47,stack expects a non-empty TensorListF RmA-0 (Evaluation error)
+48,stack expects a non-empty TensorListF RmA-0 (Evaluation error)
+59,stack expects a non-empty TensorListFCl RmA-1_RmA-0 (Evaluation error)
+65,stack expects a non-empty TensorListOF RmA-1_RmA-0 (Evaluation error)
+75,stack expects a non-empty TensorListP=S RmA-1_RmA-0 (Evaluation error)
+92,No improver found
+94,stack expects a non-empty TensorListClCl RmA-1_RmA-0 (Evaluation error)
+98,stack expects a non-empty TensorListC=P RmA-0_RmA-0 (Evaluation error)

@@ -33,7 +33,7 @@ def smi_to_pyg(
     RP_THF: float,
     RP_DMSO: float,
     RP_DMF: float,
-    device: torch.device
+    device: torch.device,
 ) -> Optional[Data]:
     """
     Converts a SMILES string to a PyG `Data` object with atom and bond features.

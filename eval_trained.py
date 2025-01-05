@@ -17,34 +17,6 @@ def main():
     # Load data from CSV
     df = pd.read_csv("resolved.csv")
 
-    # Filtering out unstable molecules
-    df = df.loc[df["stable"] == "stable"]
-    df = df.loc[df["same_sml"] != "mwt_diff"]
-
-    # Filter out problematic SMILES
-    problem_smiles = [
-        'C#CCC12CC(O1)c1c2nc(=N)sc1Br',
-        'N=c1sc(Br)c2c3c1CC1OC(=NCC2)C31',
-        'N=c1cnc2[nH]c(=O)c(cc2Br)c(=N)cc[nH]1',
-        'N=c1nc2c(c(Br)s1)OC1C3CC(O3)C1O2',
-        'N=c1nc2c(c(Br)s1)OCC21CC2CC1O2',
-        'N=C1C=Cc2cc(Br)c(oc2=N)C=CN=CO1',
-        'Cc1cc(C#N)cc(C(F)(F)F)c(=N)n1',
-        'Cc1ccc(N)c(=NO)c(=O)cc1C(F)(F)F',
-        'Cc1nccc(O)nc(CC(F)(F)F)c(C)s1',
-        'CCC(O)c1c(F)c(C#N)nc(C)c1NC=N',
-        'Cc1cnc(=NCC(F)(F)F)c(N)c(O)c1N',
-        'CCC(=O)Oc1c(Cl)cnc2c1C1CC2O1',
-        'Cc1c(NCC(F)(F)F)c(=N)ncccc1=N',
-        'CCNCc1c(C(F)(F)F)c(=O)[nH]nnc1=N',
-        'CC(N)c1cc(F)nc(=N)n1CC(O)C(N)=O',
-        'CC(N)(c1cc(N)nc(F)n1)C(N)(CN)CN',
-        'Cc1occoc(=N)c(C(F)(F)F)c(C)c1C',
-        'CCc1ncnc(C(F)(F)F)cc(C)c(O)[nH]1',
-        'CC12OC(C#N)(c3c1cc(Cl)nc3O)C2O'
-    ]
-    df = df[~df.smiles.isin(problem_smiles)]
-
     # Build dataset
     dataset = SolvDataset(
         df["smiles"],
