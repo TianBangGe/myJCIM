@@ -120,6 +120,7 @@ $$\ [-EA, -EA + \Delta_{solv} ]  $$
 
 ```
 resolved_project/
+├── Evolving_EA.ipynb  # Example of generation of new molecules in a traget range of EA (evomol needed)
 ├── data_utils.py      # Reading CSV, dataset creation, SMILES->PyG conversion
 ├── features.py        # RDKit-based atom and bond feature extraction
 ├── model/
