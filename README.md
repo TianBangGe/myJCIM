@@ -23,7 +23,7 @@ This implementation supports 2 mods of training, truing on/off conditioning the 
 
 ### Data Preparation
 
-Place your CSV file (e.g., `resolved.csv`) in the project folder. It should contain columns for:
+Place your CSV file (e.g., `ReSolvedData.csv`) in the project folder. It should contain columns for:
 - `smiles` (string)
 - `EA` (float)
 - `RP_ACN`, `RP_H2O`, `RP_THF`, `RP_DMSO`, `RP_DMF` (float) — these are solvent-dependent properties.

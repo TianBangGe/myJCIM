@@ -38,7 +38,7 @@ def main():
 
     # Loading the best model for inference
     model.load_state_dict(torch.load(
-        "weights/no_EA_model.pth", map_location=device, weights_only=True))
+        "weights/best_model.pth", map_location=device, weights_only=True))
     model.eval()
 
     # Evaluate train, test, validation for solvent properties
