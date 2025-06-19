@@ -1,6 +1,6 @@
-# ReSolved - Multi-Solvent Reduction Potetnail Estimation GNN
+# ReSolved - Multi-Solvent Reduction potetnail Estimation GNN
 
-This repository contains code for predicting the reduction potentials of molecular species in various solvents. This approach enables simultaneous learning of electron affinity and solvent-dependent corrections for redox potentials and can generalise to RP outisde of the dataset.
+This repository contains code for predicting the reduction potentials of molecular species in various solvents. This approach enables simultaneous learning of electron affinity (EA) and solvent-dependent corrections for redox potentials and can generalise to previously unseen solvents.
 
 ---
 
@@ -19,7 +19,7 @@ This repository contains code for predicting the reduction potentials of molecul
 
 ## Usage
 
-This implementation supports 2 mods of training, truing on/off conditioning the training on the -EA. This can be set up in `run_experiment.py` or `train.py`, by setting the `explicit_ea = False`
+This implementation supports two modes of training, with and without the explicit conditioning for the solvent-independent terms (-EA). This can be set up in `run_experiment.py` or `train.py`, by setting the `explicit_ea = False`
 
 ### Data Preparation
 
@@ -66,11 +66,11 @@ $$
 using a thermodynamic cycle:
 
 $$
-\Delta G_{\text{solution}} = \Delta G_{\text{gas}} + \Delta G_{\text{solv},A^-} - \Delta G_{\text{solv},A}
+\Delta\Delta G_{\text{solution}} = \Delta G_{\text{gas}} + \Delta G_{\text{solv},A^-} - \Delta G_{\text{solv},A}
 $$
 
 Here:
-- $\Delta G_{\text{solution}}$ is the gas-phase electron attachment free energy.
+- $\Delta\Delta G_{\text{solution}}$ is the gas-phase electron attachment free energy.
 - $\Delta G_{\text{solv},A}$ and  $\Delta G_{\text{solv},A^-}$  are the solvation free energies for neutral $\ A$ and anionic $\ A^-$, respectively. 
 
 ---
@@ -85,7 +85,7 @@ $$
 E_{\text{red}} = E^\circ - \frac{\Delta G}{nF},
 $$
 
-where $\ n$ is the number of electrons transferred and $\ F$ is the Faraday constant.
+where $\ n$ is the number of electrons transferred, $\ F$ is the Faraday constant, $E^\circ$ is the electrode potential of the reference electrode (note that the MPNN is trained on the absolute potentials, i.e., $E^\circ$ = 0).
 
 ![Mode Architecture](model_overview.png)
 
@@ -95,7 +95,7 @@ In this codebase, node (atom) and edge (bond) features are updated using multipl
 
 1. Computes messages from neighboring nodes and edges.
 2. Produces updated node features, which we combine residually with the previous layer’s node features.
-3. Similarly updates the edge states in a residual fashion.
+3. Similarly, the edge states are updated in a residual fashion.
 
 After the final layer, we concatenate the final node and edge embeddings.
 
@@ -107,8 +107,8 @@ We pass the concatenated node-edge feature set through two parallel Set Transfor
 2. Another to incorporate solvent information (via learnable embeddings of each solvent’s dielectric constant and refractive index) and generate the solvent-dependent correction.
 
 By concatenating these aggregated representations with the solvent embeddings, the model predicts:
-- The negative of the EA (i.e., -EA.
-- The combined \(-EA + $\text{(solvent contribution)}\ $) for each solvent.
+- The negative of the EA.
+- The combined (-EA + solvent contribution) for each solvent.
 
 Thus, each forward pass yields a multi-output prediction vector:
 
