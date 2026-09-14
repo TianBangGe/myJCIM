@@ -14,7 +14,7 @@ def main():
     set_seed(0)
 
     # Load data from CSV
-    df = pd.read_csv("resolved.csv")
+    df = pd.read_csv("../ReSolvedDB/ReSolvedData.csv")
 
     # Build dataset
     dataset = SolvDataset(

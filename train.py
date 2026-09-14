@@ -48,11 +48,11 @@ def train_model(
         generator=generator
     )
 
-    trainloader = DataLoader(train_set, batch_size=32,
+    trainloader = DataLoader(train_set, batch_size=16,
                              shuffle=True, num_workers=0)
-    validloader = DataLoader(valid_set, batch_size=32,
+    validloader = DataLoader(valid_set, batch_size=16,
                              shuffle=False, num_workers=0)
-    testloader = DataLoader(test_set, batch_size=32,
+    testloader = DataLoader(test_set, batch_size=16,
                             shuffle=False, num_workers=0)
 
     net = MPNNModel(
