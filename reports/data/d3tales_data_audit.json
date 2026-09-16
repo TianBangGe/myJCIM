@@ -1,0 +1,28 @@
+{
+  "raw_file": "E:\\desktop\\myJCIM\\data\\raw\\d3tales_public.csv",
+  "raw_sha256": "40dc15b8dd00800a23b4ad6f57456634c8163a237cd7cb32aafa9addb7db492d",
+  "raw_rows": 35777,
+  "raw_columns": 98,
+  "target_check": {
+    "reduction_non_null": 30356.0,
+    "solv_reduction_non_null": 30356.0,
+    "both_non_null": 30356.0,
+    "maximum_absolute_difference": 0.0
+  },
+  "duplicate_summary": {
+    "valid_rows": 30145.0,
+    "unique_canonical_smiles": 30117.0,
+    "duplicate_groups": 27.0,
+    "extra_duplicate_rows": 28.0,
+    "maximum_duplicate_target_range": 1.2149999999999999
+  },
+  "scaffold_summary": {
+    "rows": 30145,
+    "unique_scaffolds_including_empty": 15964,
+    "empty_scaffold_rows": 7,
+    "largest_scaffold_group": 1696
+  },
+  "python_version": "3.10.21",
+  "pandas_version": "2.3.3",
+  "rdkit_version": "2022.09.5"
+}

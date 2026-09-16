@@ -1,13 +1,27 @@
+# IDE and notebook runtime files
+.idea/
+.ipynb_checkpoints/
+
+# Python caches and local environments
 __pycache__/
 *.py[cod]
-
-# Local Python environments
+.pytest_cache/
+.mypy_cache/
 .venv/
 venv/
+env/
 .conda/
 
-# Generated training artifacts
-best_model.pth
+# Local secrets and transient files
+.env
+.env.*
+*.log
+tmp/
+
+# Large training artifacts are regenerated on the GPU server
+*.pth
+*.pt
+*.ckpt
 loss_curve.png
 *_prediction.csv
 train_solvent_*.png
@@ -17,8 +31,10 @@ train_ea_ea.png
 validation_ea_ea.png
 test_ea_ea.png
 
-# IDE and OS metadata
-.idea/
+# Editor and operating-system metadata
 .vscode/
 .DS_Store
 Thumbs.db
+
+# Local helper/plugin checkout; it is not part of this research repository
+nature-skills/

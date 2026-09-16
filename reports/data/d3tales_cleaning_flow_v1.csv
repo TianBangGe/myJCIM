@@ -1,0 +1,5 @@
+step,remaining,removed_from_previous
+raw_rows,35777,0
+reduction_potential_not_null,30356,5421
+neutral_ground_state,30145,211
+valid_smiles,30145,0

@@ -1,0 +1,19 @@
+{
+  "dataset_version": "D3TaLES-Reduction-v1",
+  "raw_file": "E:\\desktop\\myJCIM\\data\\raw\\d3tales_public.csv",
+  "raw_sha256": "40dc15b8dd00800a23b4ad6f57456634c8163a237cd7cb32aafa9addb7db492d",
+  "target": "reduction_potential",
+  "neutral_charge": 0,
+  "duplicate_tolerance_eV": 0.05,
+  "duplicate_rule": "average_if_range_le_tolerance_else_exclude_group",
+  "raw_rows": 35777,
+  "valid_candidate_rows": 30145,
+  "accepted_duplicate_groups": 12,
+  "excluded_conflict_groups": 15,
+  "excluded_conflict_rows": 31,
+  "final_unique_molecules": 30102,
+  "unique_scaffolds_including_empty": 15956,
+  "python_version": "3.10.21",
+  "pandas_version": "2.3.3",
+  "rdkit_version": "2022.09.5"
+}

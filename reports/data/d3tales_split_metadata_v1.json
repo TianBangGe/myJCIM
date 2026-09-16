@@ -1,0 +1,35 @@
+{
+  "dataset_version": "D3TaLES-Reduction-v1",
+  "clean_file": "E:\\desktop\\myJCIM\\data\\processed\\d3tales_reduction_neutral_v1.csv",
+  "clean_file_sha256": "377c6cee92531d0a93e24b4644a118de54d88ae2b1915ff15564c70a80498705",
+  "total_molecules": 30102,
+  "fractions": {
+    "train": 0.8,
+    "valid": 0.1,
+    "test": 0.1
+  },
+  "seed": 42,
+  "primary_split": "scaffold",
+  "auxiliary_split": "random",
+  "scaffold_definition": "Bemis-Murcko includeChirality=False",
+  "scaffold_algorithm": "size_descending_greedy_train_then_valid_then_test",
+  "empty_scaffold_policy": "all_empty_scaffolds_share_one_group",
+  "scaffold_counts": {
+    "train": 24081,
+    "valid": 3010,
+    "test": 3011
+  },
+  "random_counts": {
+    "train": 24081,
+    "valid": 3010,
+    "test": 3011
+  },
+  "scaffold_overlap": {
+    "train_valid": 0,
+    "train_test": 0,
+    "valid_test": 0
+  },
+  "python_version": "3.10.21",
+  "numpy_version": "1.26.4",
+  "pandas_version": "2.3.3"
+}
